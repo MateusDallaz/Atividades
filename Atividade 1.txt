@@ -1,0 +1,12 @@
+OUTPUT "Menu de opções 1: Hamburguer, 2: Pizza, 3: Macarrão"
+DECLARE escolha : INT
+INPUT escolha
+IF escolha = 1 THEN
+OUTPUT "Hamburguer, Bela escolha"
+ENDIF
+IF escolha = 2 THEN
+OUTPUT "Pizza, Bela escolha"
+ENDIF
+IF escolha = 3 THEN
+OUTPUT "Macarrão, Bela escolha"
+ENDIF
