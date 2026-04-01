@@ -1,8 +1,9 @@
+n1 = int(input('Digite um número: '));
 def parImpar(numero):
     if numero %2 == 0:
         return('O número é par');
     else:
         return('O número é impar');
 
-resultado = parImpar(6);
+resultado = parImpar(n1);
 print(resultado);
