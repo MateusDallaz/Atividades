@@ -9,3 +9,11 @@ select * from alunos;
 INSERT INTO alunos(nome, idade) VALUES ('Mateus', 23);
 INSERT INTO alunos(nome, idade) VALUES ('João', 25);
 INSERT INTO alunos(nome, idade) VALUES ('Aline', 18);
+
+DELETE FROM alunos;
+
+SET SQL_SAFE_UPDATES =0;
+
+DROP TABLE alunos;
+
+data_log TIMESTAMP DEFAULT CURRENT_TIMESTAMP (puxa direto a data e hora de registro, utilizando como padrão o horario do servidor)
