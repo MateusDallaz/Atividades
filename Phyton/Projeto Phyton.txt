@@ -1,0 +1,70 @@
+cliente = {
+    'nome': None,
+    'idade': None,
+    'telefone': None
+};
+
+def clienteCadastrado():
+    return cliente['nome'] is not None;
+    
+def cadastrarCliente():
+    print('\n--- Cadastrar Cliente ---');
+    cliente['nome'] = input('Digite seu nome: ');
+    cliente['idade'] = int(input('Digite sua idade: '));
+    cliente['telefone'] = input('Digite seu telefone: ');
+    print('Cliente cadastrado com sucesso!\n');
+
+def mostrarDados():
+    print('\n--- Dados do Cliente  ---');
+    if not clienteCadastrado():
+        print('Nenhum cliente cadastrado.\n');
+    else:
+        print(f'Nome: {cliente['nome']}');
+        print(f'Idade: {cliente['idade']}');
+        print(f'Telefone: {cliente['telefone']}\n');
+
+def verificarMaioridade():
+    print('\n--- Verificar Maioridade ---');
+    if not clienteCadastrado():
+        print('Nenhum cliente cadastrado.\n');
+    else:
+        if cliente['idade'] >= 18:
+            print('O cliente é maior de idade. \n');
+        else:
+            print('O cliente é menor de idade. \n');
+
+def atualizarDados():
+    print('\n--- Atualizar Dados ---');
+    if not clienteCadastrado():
+        print('Nenhum cliente cadastrado.\n');
+    else:
+        cliente['nome'] = input('Digite o novo nome: ');
+        cliente['idade'] = int(input('Digite a nova idade: '));
+        cliente['telefone'] = input('Digite o novo telefone: ');
+        print('dados atualizados com sucesso!\n');
+        
+def menu():
+    while True:
+        print('1 - Cadastrar Cliente');
+        print('2 - Mostrar Dados do Cliente');
+        print('3 - Verificar Maioridade');
+        print('4 - Atualizar  Dados');
+        print('5 - Sair');
+        
+        opcao = input('Escolha uma opção: ')
+        
+        if opcao == '1':
+            cadastrarCliente();
+        elif opcao == '2':
+            mostrarDados();
+        elif opcao == '3':
+            verificarMaioridade();
+        elif opcao == '4':
+            atualizarDados();
+        elif opcao == '5':
+            print('\n Até a próixima!');
+            break;
+        else:
+            print('\n--- Por gentileza digite uma opção valida ---\n');
+            
+menu();
