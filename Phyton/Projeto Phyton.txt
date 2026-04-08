@@ -1,55 +1,41 @@
-cliente = {
-    'nome': None,
-    'idade': None,
-    'telefone': None
-};
+cliente = []
 
-def clienteCadastrado():
-    return cliente['nome'] is not None;
-    
 def cadastrarCliente():
     print('\n--- Cadastrar Cliente ---');
-    cliente['nome'] = input('Digite seu nome: ');
-    cliente['idade'] = int(input('Digite sua idade: '));
-    cliente['telefone'] = input('Digite seu telefone: ');
+    nome = input('Digite seu nome: ');
+    idade = int(input('Digite sua idade: '));
+    if idade >= 18:
+        print('O cliente é maior de idade. \n');
+    else:
+        print('O cliente é menor de idade. \n');
+    telefone = input('Digite seu telefone: ');
+    cliente.append([nome, idade, telefone]);
     print('Cliente cadastrado com sucesso!\n');
 
 def mostrarDados():
     print('\n--- Dados do Cliente  ---');
-    if not clienteCadastrado():
-        print('Nenhum cliente cadastrado.\n');
+    if cliente == []:
+        print('Nenhum cadastro encontrado\n');
     else:
-        print(f'Nome: {cliente['nome']}');
-        print(f'Idade: {cliente['idade']}');
-        print(f'Telefone: {cliente['telefone']}\n');
-
-def verificarMaioridade():
-    print('\n--- Verificar Maioridade ---');
-    if not clienteCadastrado():
-        print('Nenhum cliente cadastrado.\n');
-    else:
-        if cliente['idade'] >= 18:
-            print('O cliente é maior de idade. \n');
-        else:
-            print('O cliente é menor de idade. \n');
+        for c in cliente:
+            print (c);
+        
 
 def atualizarDados():
     print('\n--- Atualizar Dados ---');
-    if not clienteCadastrado():
-        print('Nenhum cliente cadastrado.\n');
+    if cliente == []
+        print('Nenhum cadastro encontrado\n');
     else:
-        cliente['nome'] = input('Digite o novo nome: ');
-        cliente['idade'] = int(input('Digite a nova idade: '));
-        cliente['telefone'] = input('Digite o novo telefone: ');
+        indice = int(input('Qual cadastro você deseja alterar:'));
+        
         print('dados atualizados com sucesso!\n');
         
 def menu():
     while True:
         print('1 - Cadastrar Cliente');
         print('2 - Mostrar Dados do Cliente');
-        print('3 - Verificar Maioridade');
-        print('4 - Atualizar  Dados');
-        print('5 - Sair');
+        print('3 - Atualizar  Dados');
+        print('4 - Sair');
         
         opcao = input('Escolha uma opção: ')
         
@@ -58,11 +44,9 @@ def menu():
         elif opcao == '2':
             mostrarDados();
         elif opcao == '3':
-            verificarMaioridade();
-        elif opcao == '4':
             atualizarDados();
-        elif opcao == '5':
-            print('\n Até a próixima!');
+        elif opcao == '4':
+            print('\nAté a próixima!');
             break;
         else:
             print('\n--- Por gentileza digite uma opção valida ---\n');
