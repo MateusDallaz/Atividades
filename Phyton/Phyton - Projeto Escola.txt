@@ -1,0 +1,69 @@
+turma = [];
+nota = [];
+
+def cadastro():
+    print('--- Cadastro de Turma ---\n');
+    
+    nomealuno = input('Digite o nome do aluno: ');
+    materia = input('Digite a materia: ');
+    serie = input('Digite a serie que o aluno frequenta: ');
+    
+    turma.append([nomealuno, materia, serie]);
+    
+    print('\n --- Cadastro realizado com sucesso ---');
+
+def mostrarDados():
+    print('\n --- Cadastros Realizados ---\n');
+    if turma == []:
+        print('Nenhum cadastro encontrado\n');
+    else:
+        for i, c in enumerate(turma, start=1):
+            print(f'\n{i} - Nome: {c[0]} | Materia: {c[1]} | Serie: {c[2]}\n');
+
+def notas():
+    print('\n--- Cadastro de Notas ---\n');
+    if turma == []:
+        print('Nenhum cadastro encontrado\n');
+    else:
+        nota1 = float(input('Digite a 1ª nota do aluno: '));
+        nota2 = float(input('Digite a 2ª nota do aluno: '));
+    
+    nota.append([nota1, nota2]);
+    
+def media():
+    print('\n--- Calculo de Notas ---\n');
+    
+    nota[0] = nota1
+    nota[1] = nota2
+    
+    media = (nota1 + nota2)/2
+    
+    
+    print(f'A media do aluno é {media}');
+
+def menu():
+    while True:
+        print('--- Menu de Interação ---\n');
+        print('1 - Cadastro de Turma');
+        print('2 - Mostrar Cadastros');
+        print('3 - Cadastro de Notas');
+        print('4 - Calculo de Media');
+        print('5 - Sair');
+        
+        opcao = int(input('\nDigite uma opção: '));
+        
+        if opcao == 1:
+            cadastro();
+        elif opcao == 2:
+            mostrarDados();
+        elif opcao == 3:
+            notas();
+        elif opcao == 4:
+            media();
+        elif opcao == 5:
+            print('\n--- Até a Proxima ---');
+            break;
+        else:
+            print('Digite uma opção valida');
+
+menu();
