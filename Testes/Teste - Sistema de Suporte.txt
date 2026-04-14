@@ -1,0 +1,44 @@
+create database suporte_tecnico;
+use suporte_tecnico;
+
+create table clientes(
+id int auto_increment primary key,
+nome varchar(50) not null
+);
+
+insert into clientes(nome) values ('João'), ('Marcos'), ('Pedro'), ('Aline');
+			
+create table chamados(
+numero_chamado int auto_increment primary key,
+data_chamdo datetime default current_timestamp,
+descricao varchar(500) not null,
+id_usuario int,
+foreign key (id_usuario) references clientes(id)
+);
+
+insert into chamados(descricao, id_usuario) values('Internet não conecta', 1), ('Sistema está lento', 1), ('Esqueci a senha do e-mail', 4), ('WhatsApp está fora do ar', 2), ('Ramal não está funcioinado', 3), ('O computrador não liga', 2);
+
+create table atendentes(
+id_atendent int auto_increment primary key,
+nome_atendente varchar(45),
+data_atendimento date not null,
+descricao_servico varchar(500),
+chamado_numero int,
+foreign key (chamado_numero) references chamados(numero_chamado)
+);
+
+insert into atendentes(nome_atendente, data_atendimento, descricao_servico, chamado_numero) values('Junior', 2026-04-09, 'Conecta o cabo', 1), ('Alex', 2026-03-31 , 'fecha as guias', 2), ('Marco', 2026-04-02, 'Clica em nova senha', 3), ('Alex', 2026-04-05, 'Reinicia o computador', 4), ('Junior', 2026-04-08, 'Confere o cabo', 5);
+
+
+create table status_chamado(
+id int auto_increment primary key,
+atualizacao varchar(300) not null,
+previsao_entrega varchar(150),
+id_atendente int,
+foreign key (id_atendente) references atendentes(id_atendent)
+);
+
+insert into status_chamado(atualizacao, previsao_entrega, id_atendente) values ('Em processo', 'até fim do mes',  1), ('Em processo', 'até ano que vem', 2), ('Em processo', 'mais duas semans', 1), ('Finalizado', '', 3), ('Em processo', '45 dias', 2);
+
+delete from clientes;
+delete from atendentes;
