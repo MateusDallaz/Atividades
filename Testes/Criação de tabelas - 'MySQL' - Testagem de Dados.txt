@@ -21,3 +21,8 @@ data_log TIMESTAMP DEFAULT CURRENT_TIMESTAMP (puxa direto a data e hora de regis
 DELETE FROM clientes WHERE id = 3; (para deletar um rtegistro dentro da tabela, precisa do WHERE para identificar qual registro deletar)
 
 ALTER TABLE movies ADD COLUMN id AINT AUTO_INCREMENT PRIMARY KEY FIRST
+
+ALTER TABLE nome tablea CHANGE `nome antigo da tabela entre crazes` nome novo da tablea TEXT(Tipo);
+
+SELECT COUNT(*) FROM (contará a quantia de dados)
+
