@@ -19,3 +19,5 @@ DROP TABLE alunos;
 data_log TIMESTAMP DEFAULT CURRENT_TIMESTAMP (puxa direto a data e hora de registro, utilizando como padrão o horario do servidor)
 
 DELETE FROM clientes WHERE id = 3; (para deletar um rtegistro dentro da tabela, precisa do WHERE para identificar qual registro deletar)
+
+ALTER TABLE movies ADD COLUMN id AINT AUTO_INCREMENT PRIMARY KEY FIRST
