@@ -1,4 +1,4 @@
-Exercicio 1:
+#Exercicio 1:
 
 nome = input('Digite seu nome: ');
 idade = int(input('Digite sua idade: '));
@@ -7,7 +7,7 @@ cidade = input('Digite sua cidade: ')
 print(f'Olá, meu nome é {nome}, tenho {idade} anos e moro em {cidade}')
 
 
-Exercicio 2:
+#Exercicio 2:
 
 n1 = float(input('Digite o primeiro numero: '));
 n2 = float(input('Digite o segundo numero: '));
@@ -23,7 +23,7 @@ print(f'\nA multiplicação de {n1} * {n2} é: {multiplicacao}');
 print(f'\nA divisão de {n1} / {n2} é: {divisao}');
 
 
-Exercicio 3:
+#Exercicio 3:
 
 numero = int(input('Digite um número: '));
 
@@ -32,7 +32,7 @@ for i in range(1, 11):
     print(f'{numero} * {i} = {resultado}');
 
 
-Exercicio 4:
+#Exercicio 4:
 
 while True:
     numero = int(input('Digite o número secreto: '));
@@ -46,7 +46,7 @@ while True:
         break;
         
 
-Exercicio 5:
+#Exercicio 5:
 
 compras = [];
 
@@ -58,7 +58,7 @@ for i in range(5):
     for indice, i in enumerate(compras, start=1):
         print(f'Você precisa comprar{indice}, {i}');
 
-Exercicio 6:
+#Exercicio 6:
 
 nota = [7.5, 8.9, 10, 6.1, 3, 5];
 
@@ -67,7 +67,7 @@ meida = sum(nota)/len(nota);
 print(f'A maior nota é: {max(nota)}\n A menor é: {min(nota)}\n e a media da turma é {meida}');
 
 
-Exercicio 7:
+#Exercicio 7:
 
 def par_ou_impar(n):
     if n %2 == 0:
@@ -79,7 +79,7 @@ par_ou_impar(1);
 par_ou_impar(8);
 par_ou_impar(3);
 
-Exercicio 8:
+#Exercicio 8:
 
 peso = float(input('Digite seu peso (em Kg): '));
 altura = float(input('Digite sua altura (em metros): '));
@@ -101,37 +101,52 @@ def classificar_imc():
 classificar_imc();
 
 
-Exercicio 9:
+#Exercicio 9:
 
-tarefas = [] # lista de tarefas
+tarefas = []  # lista de tarefas
 
 def listar():
     if len(tarefas) == 0:
         print('Nenhuma tarefa cadastrada.')
     else:
+        print('\n--- Lista de Tarefas ---')
         for i, t in enumerate(tarefas, 1):
             print(f'{i}. {t}')
-        
+
 def adicionar():
-    adicionar = input('Adicione uma tarefa: ')
-    
-    tarefas.append(adicionar)
+    tarefa = input('Digite a tarefa que deseja adicionar: ')
+    tarefas.append(tarefa)
+    print('Tarefa adicionada com sucesso!')
 
 def remover():
-   alguma.coisa
-    
-def menu():
-    while True:
-        print('\n1 - Adicionar 2 - Remover 3 - Listar 4 - Sair')
-        opcao = input('Escolha: ')
+    if len(tarefas) == 0:
+        print('Nenhuma tarefa para remover.')
+    else:
+        listar()
+        tarefa = input('Digite o nome da tarefa que deseja remover: ')
         
-        if opcao == '1':
-            adicionar()
-        elif opcao == '2':
-            remover()
-        elif opcao == '3':
-            listar()
-        elif opcao == '4':
-            break
+        if tarefa in tarefas:
+            tarefas.remove(tarefa)
+            print('Tarefa removida com sucesso!')
+        else:
+            print('Tarefa não encontrada.')
 
-menu() 
+while True:
+    print('\n1 - Adicionar')
+    print('2 - Remover')
+    print('3 - Listar')
+    print('4 - Sair')
+    
+    opcao = input('Escolha: ')
+    
+    if opcao == '1':
+        adicionar()
+    elif opcao == '2':
+        remover()
+    elif opcao == '3':
+        listar()
+    elif opcao == '4':
+        print('Saindo do programa...')
+        break
+    else:
+        print('Opção inválida. Tente novamente.')
