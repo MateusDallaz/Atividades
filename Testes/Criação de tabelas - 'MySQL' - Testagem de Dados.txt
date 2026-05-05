@@ -26,3 +26,18 @@ ALTER TABLE nome tablea CHANGE `nome antigo da tabela entre crazes` nome novo da
 
 SELECT COUNT(*) FROM (contará a quantia de dados)
 
+select * from movies;
+
+select * from movies where `ano` = 2008;
+
+select * from movies where `Audiencia` > 80 limit 3;
+
+select count(*) from movies where `Tomates` > 75;
+ 
+select count(*) from movies where `Genero` = 'Comedy';
+ 
+select * from movies where `Lucro` > 10 Limit 1;
+ 
+select * from movies where `Produtora` like '%Disney%';
+
+select * from movies where `Tomates` <= 3
