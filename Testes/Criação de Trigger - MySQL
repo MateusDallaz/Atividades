@@ -1,3 +1,5 @@
+/*Create Database*/
+
 create database aula_testes;
 use aula_testes;
 
@@ -20,7 +22,7 @@ usuario varchar(50)
 
 
 
-
+/*criação do trigger*/
 DELIMITER $$
 create trigger tgr_after_udate_produto
 after update ON produtos
@@ -36,3 +38,8 @@ insert into log_auditoria_produtos (produto_id, acao, valor_antigo, valor_novo, 
 values (old.id, 'UPDATE_ESTOQUE', OLD.estoque, NEW.estoque, user());
 END IF;
 END$$
+
+
+/* update de itens nas tabelas*/
+update produtos set preco = 9.50  where id = 1 ;
+update produtos set estoque = 200  where id = 1 ;
