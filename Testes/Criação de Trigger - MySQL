@@ -78,13 +78,9 @@ CREATE TRIGGER tgr_emprestimo
 AFTER INSERT ON emprestimos
 FOR EACH ROW 
 BEGIN
-
+/*NEW. não é mais necessario porém no CMAE o MySQL está desatualizado*/
 IF NEW.status_livro = 'EMPRESTADO' THEN 
 UPDATE livros SET quantidade = quantidade -1 
 WHERE id = NEW.livro_id;
 END IF;
 END$$
-
-
-describe emprestimos
-
