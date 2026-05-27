@@ -1,0 +1,6 @@
+SELECT c.nome AS cliente, 
+p.produto, p.preco FROM pedido p 
+INNER JOIN cliente c ON p.id_cliente = c.id;
+/*Nesse exemplo foi criado duas tabelas: pedido e cliente, onde o p referencia pedido e o c referencia cliente*/
+
+SELECT a.nome, n.materia, n.nota FROM aluno a LEFT JOIN notas n ON n.id_aluno = a.id;
